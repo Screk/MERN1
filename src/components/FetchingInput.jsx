@@ -18,24 +18,16 @@ const FetchingInput = () => {
   useEffect(() => {
     const getMarsPhoto = async () => {
       try {
-        const response = await fetch(
-          `${NASA_URL}mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${NASA_API_KEY}`
-        );
-        if (response.ok) {
-          const marsJson = await response.json();
-          setMarsData({
-            photo: marsJson.photo[0].img_src,
-          });
-        } else {
-          console.error("Error al cargar la imagen de Marte.");
-        }
+        let data = await fetch(`${NASA_URL}mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${NASA_API_KEY}`).then((res) => res.json());
+        console.log(data.photos);
+        setMarsData(data.photos)
       } catch (error) {
-        console.error("Error al conectarse con la API de la NASA.", error);
+        console.log(error)
       }
     };
     getMarsPhoto();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [select]);
+  }, [date])
+
   
 
   useEffect(() => {
@@ -102,7 +94,7 @@ const FetchingInput = () => {
         <option value="APOD">APOD</option>
         <option value="Mars">Mars</option>
       </select>
-      <img src={marsData} />
+      <img src={marsData[0].img_src} />
       </>
     )
   }
