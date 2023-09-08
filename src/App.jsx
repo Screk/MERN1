@@ -13,8 +13,8 @@ function App() {
       <div className='navContainer'>
         <nav>
           <NavLink className='Home' to='/pages/Home'>Home</NavLink>
-          <NavLink className='Apod' to='/pages/Apod'>Apod<img src="/public/apod-ico.png" alt="logo" /></NavLink>
-          <NavLink className='Mars' to='/pages/Mars'>Mars<img src="/public/mars-ico.png" alt="logo" /></NavLink>
+          <NavLink className='Apod' to='/pages/Apod'>Apod<img src="/apod-ico.png" alt="logo" /></NavLink>
+          <NavLink className='Mars' to='/pages/Mars'>Mars<img src="/mars-ico.png" alt="logo" /></NavLink>
         </nav>
       </div>
       <main>
