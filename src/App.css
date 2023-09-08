@@ -58,3 +58,27 @@ main {
 footer {
   margin-top: 3rem;
 }
+
+@media screen and ( max-width: 800px) {
+  header > h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav {
+    width: 20rem;
+    gap: 1rem;
+  }
+
+  .Home {
+    font-size: 20px;
+  }
+  .Apod {
+    font-size: 20px;
+  }
+  .Mars {
+    font-size: 20px;
+  }
+  
+}
