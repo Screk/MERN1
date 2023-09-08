@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import React from 'react'
+import './Apod.css'
 
 const NASA_URL = "https://api.nasa.gov/";
 const NASA_API_KEY = "VFtdqUKrhdBQAahCZ6cqNaKdExIvJbDNtPICUlOv";
@@ -39,26 +40,29 @@ const Apod = () => {
 
   return (
     <>
-        <div>
+      <div className="container">
+        <div className="title">
             <h2>Imagen astronómica del día</h2>
-            <h3>Esta imagen corresponde con la fecha {date}</h3>
-            <input type="date" value={date} onChange={handleInput} />
+            <input type="date" value={date} max={date} onChange={handleInput} />
         </div>
 
         <div>
           {APODData ? (
             <>
+            <div className="content">
               <img src={APODData.image} alt={APODData.title} />
               <h3>{APODData.title}</h3>
               <div>
                 {APODData.date}, {APODData.copyright}
               </div>
               <p>{APODData.explanation}</p>
+            </div>
             </>
           ) : (
             <p>Cargando...</p>
           )}
         </div>
+      </div>
     </>
   )
 }

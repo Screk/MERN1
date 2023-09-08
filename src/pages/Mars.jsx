@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import React from 'react'
+import './Mars.css'
 
 const NASA_URL = "https://api.nasa.gov/";
 const NASA_API_KEY = "VFtdqUKrhdBQAahCZ6cqNaKdExIvJbDNtPICUlOv";
@@ -32,19 +33,23 @@ const Mars = () => {
       if(marsData.length === 0|| marsData.code === 404) {
         return (
             <>
-            <h3>No se ha podido mostrar la imagen</h3>
-            <input type="date" value={date} onChange={handleInput} />
-            <img src={marsData[0]} />
+            <div className="content">
+              <h3>No se ha podido mostrar la imagen</h3>
+              <h4>Elija otra fecha</h4>
+              <input type="date" value={date} max={date} onChange={handleInput} />
+              <img src={marsData[0]} />
+            </div>
             </>
         )
       } else {
 
   return (
-    <>  
+    <>
+      <div className="content2">
         <h3>Imagen de Marte</h3>
-        <h3>Esta imagen fue tomada en la fecha: {date}</h3>
         <input type="date" value={date} onChange={handleInput} />
         <img src={marsData[0].img_src} />
+      </div> 
     </>
   )
       }

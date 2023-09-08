@@ -10,11 +10,11 @@ function App() {
       <header>
         <h1>Imagenes de la NASA </h1>
       </header>
-      <div>
+      <div className='navContainer'>
         <nav>
-          <NavLink to='/pages/Home'>Home</NavLink>
-          <NavLink to='/pages/Apod'>Apod</NavLink><img src="/public/apod-ico.png" alt="logo" />
-          <NavLink to='/pages/Mars'>Mars</NavLink><img src="/public/mars-ico.png" alt="logo" />
+          <NavLink className='Home' to='/pages/Home'>Home</NavLink>
+          <NavLink className='Apod' to='/pages/Apod'>Apod<img src="/public/apod-ico.png" alt="logo" /></NavLink>
+          <NavLink className='Mars' to='/pages/Mars'>Mars<img src="/public/mars-ico.png" alt="logo" /></NavLink>
         </nav>
       </div>
       <main>
