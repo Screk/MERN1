@@ -46,11 +46,11 @@ const Apod = () => {
             <input type="date" value={date} max={date} onChange={handleInput} />
         </div>
 
-        <div>
+        <div className="content_father">
           {APODData ? (
             <>
             <div className="content">
-              <img src={APODData.image} alt={APODData.title} />
+              <img className="img" src={APODData.image} alt={APODData.title} />
               <h3>{APODData.title}</h3>
               <div>
                 {APODData.date}, {APODData.copyright}

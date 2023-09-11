@@ -12,20 +12,30 @@
     align-items: center;
 }
 
+.content_father {
+    width: 80vw;
+}
+
 .content {
     margin: 10px;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 80vw;
 }
 
-.content > img {
-    height: 50vh;
+.img {
+    height: auto;
+    max-width: 70vw;
+}
+
+.content > p {
+    width: 80%;
 }
 
 @media screen and ( max-width: 800px) {
     .content > img {
-        height: 30vh;
+        height: auto;
     }
 }

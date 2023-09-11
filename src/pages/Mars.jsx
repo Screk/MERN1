@@ -45,11 +45,29 @@ const Mars = () => {
 
   return (
     <>
-      <div className="content2">
-        <h3>Imagen de Marte</h3>
-        <input type="date" value={date} onChange={handleInput} />
-        <img src={marsData[0].img_src} />
-      </div> 
+        <div>
+          {marsData ? (
+            <>
+            <div className="content2">
+              <h3>Imagen de Marte</h3>
+              <input type="date" value={date}  max={date} onChange={handleInput} />
+              <img src={marsData[0].img_src} alt="img" />
+              <h3>{marsData[0].earth_date}</h3>
+              <div>
+                <p>
+                Rover: {marsData[0].rover.name}
+                </p> 
+                <p>
+                Camera: {marsData[0].camera.name}
+                </p>
+              </div>
+              <p>{marsData.explanation}</p>
+            </div>
+            </>
+          ) : (
+            <p>Cargando...</p>
+          )}
+        </div>
     </>
   )
       }

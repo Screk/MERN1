@@ -10,10 +10,19 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    width: 80vw;
 }
 
 .content2 > img {
-    height: 50vh;
+    height: auto;
+    width: 60vw;
+}
+
+.content2 > div {
+    display: flex;
+    width: 20rem;
+    height: 5rem;
+    justify-content: space-between;
 }
 
 @media screen and ( max-width: 800px) {
